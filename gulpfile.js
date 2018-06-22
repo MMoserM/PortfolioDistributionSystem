@@ -31,6 +31,6 @@ gulp.task('jslint', function () {
 });
 
 gulp.task('watch', ['sass', 'jslint'], function () {
-    gulp.watch('./public/sass/**/*.scss', ['sass']);
+    gulp.watch('./public/sass/**/**/*.scss', ['sass']);
     gulp.watch('public/js/**/*.js', ['jslint']);
 });

@@ -1,0 +1,30 @@
+/* respond-to
+ * Mixin to manage responsive breakpoints
+ * @param {String} $breakpoint - Breakpoint name
+ * @require $breakpoints
+*/
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+/* col
+ * generate columns based on index passed
+ * @param {number} $index - Index of the current column
+ * @require $max-column-number
+ * @require $column-gap
+*/
+
+@mixin col ($i) {
+        $number-columns: $max-column-number / $i;
+        $gap : $column-gap * ( $number-columns - 1) / $number-columns;
+        width: calc(#{(100% / $max-column-number) * $i} - #{$gap});
+        flex-basis: calc(#{(100% / $max-column-number) * $i} - #{$gap});
+}

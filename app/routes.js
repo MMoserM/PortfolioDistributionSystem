@@ -1,7 +1,9 @@
 'use strict';
 
 module.exports = function(app, controllers) {
-    app.get('/', function(req, res){
-        res.render('layout', controllers.Index());
-    });
+    app.get('/', controllers.Index);
+    app.get('/about', controllers.About);
+
+    //Default route in case of not found
+    app.use(controllers.Error404);
 }

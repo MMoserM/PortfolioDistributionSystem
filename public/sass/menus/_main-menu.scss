@@ -1,0 +1,65 @@
+.main-menu {
+    background-color: $mainMenuSecondary;
+    color: $mainMenuPrimary;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+
+    .logo {
+        margin: 10px;
+    }
+}
+
+.search-bar {
+    margin-left: auto;
+    height: 100%;
+
+    .search-form {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-input {
+        height: 100%;
+        box-sizing: border-box;
+        border: $searchBorder;
+        padding-left: 20px
+    }
+
+    .search-button {
+        border: $searchBorder;
+        background-color: $mainMenuPrimary;
+        height: 100%;
+        box-sizing: border-box;
+        border-left: none;
+    }
+}
+
+.menu-container {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 0;
+
+    .menu-route {
+        text-decoration: none;
+        padding: 20px;
+        color: $mainMenuPrimary;
+        border-left: 1px solid $mainMenuPrimary;
+        border-right: 1px solid $mainMenuPrimary;
+
+        & + .menu-route {
+            border-left: none;
+        }
+
+        .menu-item {
+            box-sizing: border-box;
+            text-decoration: none;
+            display: inline;
+        }
+    }
+}

@@ -6,9 +6,10 @@ var express       = require('express'),
     port          = 80;
 
 app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/public/partial');
+app.set('views', __dirname + '/public/views');
 app.set('view engine', 'ejs');
-app.engine('ejs', require('ejs-locals'));
+app.locals.resources = require('./app/resources');
+
 
 var controllers = require('./app/controllers.js');
 require('./app/routes.js')(app, controllers);

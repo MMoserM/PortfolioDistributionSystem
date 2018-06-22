@@ -2,6 +2,9 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="<%= resources.msg(page+'.description', 'metadata', '') %>">
+        <meta name="keywords" content="<%= resources.msg(page+'.keywords', 'metadata', '') %>">
+        <meta name="author" content="<%= resources.msg('author', 'metadata', 'Michael Moser Mucelin') %>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Portfolio Delivery System</title>
@@ -12,14 +15,14 @@
         <link rel="stylesheet" href="build/css/main.css" />
     </head>
     <body>
-        <nav>
-
+        <nav class="main-menu">
+            <%- include('partials/header'); %>
         </nav>
-        <section>
-            <%- partial(page) %>
+        <div class="main_content_wrapper">
+            <%- include('partials/'+page); %>
         </section>
-        <footer>
-
+        <footer class="footer">
+            <%- include('partials/footer'); %>
         </footer>
         <script src="vendor/js/jquery-3.2.1.min.js"></script>
         <script src="build/js/main.js"></script>

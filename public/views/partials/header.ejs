@@ -1,0 +1,37 @@
+<div class="logo">
+    <a href="/">
+        <img src='/img/logo.png' alt="<%= resources.msg('site.name', 'preferences', 'Site Name Here') %>" title="<%= resources.msg('site.name', 'preferences', 'Site Name Here') %>" />
+    </a>
+</div>
+<ul class="menu-container">
+    <a class="menu-route" href="/">
+        <li class="menu-item">
+            <%= resources.msg('menu.home', 'header', 'Home') %>
+        </li>
+    </a>
+    <a class="menu-route" href="/about">
+        <li class="menu-item">
+            <%= resources.msg('menu.about', 'header', 'About') %>
+        </li>
+    </a>
+    <a class="menu-route" href="/academic">
+        <li class="menu-item">
+            <%= resources.msg('menu.academic', 'header', 'Academic') %>
+        </li>
+    </a>
+    <a class="menu-route" href="/projects">
+        <li class="menu-item">
+            <%= resources.msg('menu.projects', 'header', 'Projects') %>
+        </li>
+    </a>
+    <a class="menu-route" href="/contact">
+        <li class="menu-item">
+            <%= resources.msg('menu.contact', 'header', 'Contact') %>
+        </li>
+    </a>
+</ul>
+<div class="search-bar">
+    <form class="search-form" action="/search">
+        <input class="search-input" type="text" placeholder="<%= resources.msg('search.placeholder', 'header', 'Search') %>" id="search" name="search"><input class="search-button" type="submit" value="<%= resources.msg('search.button.value', 'header', 'Search') %>"/>
+    </form>
+</div>
